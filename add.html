@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if saved %}
+	<h1>Thanks!</h1>
+{% else %}
+<h1>Add a new Contact</h1>
+
+<form method="POST" action="."{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="submit" value="Add Contact" />
+</form>
+{% endif %}
+{% endblock %}
